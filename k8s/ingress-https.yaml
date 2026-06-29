@@ -16,7 +16,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     # Certificate ARN - Replace with your ACM certificate ARN
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:911389140313:certificate/0c54b2e9-17e9-4cf9-90a7-fb0f1b46a596
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:911389140313:certificate/0ba35506-70ee-448e-a04e-2e3db899dd15
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-2017-01
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/group.name: microservices-group
