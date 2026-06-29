@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: microservices-ingress
+  name: microservices-ingress-subdomain
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -16,7 +16,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     # Certificate ARN - Replace with your ACM certificate ARN
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:XXXXXXXXXXXX:certificate/xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:911389140313:certificate/0ba35506-70ee-448e-a04e-2e3db899dd15
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS-1-2-2017-01
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/group.name: microservices-group
@@ -24,7 +24,7 @@ spec:
   ingressClassName: alb
   rules:
   # Subdomain for App 1 - Customer Service
-  - host: app1.learndevops01.click
+  - host: app1.yashapp.com
     http:
       paths:
       - path: /
@@ -36,7 +36,7 @@ spec:
               number: 80
   
   # Subdomain for App 2 - Analytics Dashboard
-  - host: app2.learndevops01.click
+  - host: app2.yashapp.com
     http:
       paths:
       - path: /
@@ -48,7 +48,7 @@ spec:
               number: 80
   
   # Subdomain for App 3 - API Gateway
-  - host: app3.learndevops01.click
+  - host: app3.yashapp.com
     http:
       paths:
       - path: /
@@ -60,7 +60,7 @@ spec:
               number: 80
   
   # Optional: Main domain redirect to App1
-  - host: learndevops01.click
+  - host: yashapp.com
     http:
       paths:
       - path: /
@@ -72,7 +72,7 @@ spec:
               number: 80
   
   # Optional: www domain redirect to main domain
-  - host: www.learndevops01.click
+  - host: www.yashapp.com
     http:
       paths:
       - path: /
